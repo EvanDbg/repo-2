@@ -1,0 +1,9 @@
+Package: io.github.rikumi.TinySpring
+Name: TinySpring
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: 桌面单页时关闭弹性；下拉搜索栏不移动图标
+Maintainer: Rikumi
+Author: Rikumi
+Section: Tweaks
