@@ -29,7 +29,7 @@
 %end
 
 %hook SBDarkeningImageView
-- (void) addSubview: (UIView*) subView {
+- (void) addSubview: (UIView*) subview {
 	// nope
 } 
 %end
@@ -38,5 +38,14 @@
 - (void) setFrame: (CGRect) frame {
 	frame.origin.y += 3;
 	%orig(frame);
+}
+%end
+
+%hook NCNotificationShortLookView
+- (void) addSubview: (UIView*) subview {
+	%orig;
+	if ([subview frame].size.width == 34 && [subview frame].size.height == 4) {
+		[subview setHidden: YES];
+	}
 }
 %end

@@ -1,0 +1,9 @@
+Package: io.github.rikumi.HapticKeyboard
+Name: HapticKeyboard
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: (6s 以上) 键盘按键短震动
+Maintainer: Rikumi
+Author: Rikumi
+Section: Tweaks
