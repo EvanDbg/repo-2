@@ -1,0 +1,9 @@
+Package: io.github.rikumi.ByeDock
+Name: ByeDock
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: 隐藏Dock 点击穿透 提取自ST4
+Maintainer: Rikumi
+Author: Rikumi
+Section: Tweaks
