@@ -1,0 +1,3 @@
+[submodule "src/xeninfo-rikumi"]
+	path = src/xeninfo-rikumi
+	url = https://github.com/rikumi/XenInfo
