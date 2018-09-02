@@ -1,0 +1,9 @@
+Package: io.github.rikumi.CloudMusic
+Name: AwesomeCloud
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: 网易云音乐播放界面美化
+Maintainer: Rikumi
+Author: Rikumi
+Section: Tweaks

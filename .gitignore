@@ -1,2 +1,6 @@
 node_modules
 package-lock.json
+src/*/.theos
+src/*/obj
+src/*/packages
+**/.DS_Store

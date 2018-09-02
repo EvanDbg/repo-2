@@ -1,0 +1,9 @@
+Package: io.github.rikumi.AutoOrientation
+Name: AutoOrientation
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: 对支持竖屏的应用禁止横屏
+Maintainer: Rikumi
+Author: Rikumi
+Section: Tweaks
