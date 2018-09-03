@@ -1,0 +1,9 @@
+Package: io.github.rikumi.HapticScreen
+Name: HapticScreen
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: (6s 以上) 屏幕触摸震动，音游必备
+Maintainer: Rikumi
+Author: Rikumi
+Section: Tweaks

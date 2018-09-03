@@ -2,6 +2,7 @@
   UILabel* _doubleHeightLabel;
 }
 - (id)_backgroundView;
+- (bool)isDoubleHeight;
 - (double)_standardHeight;
 - (double)defaultDoubleHeight;
 - (void)_clearOverrideHeight;

@@ -1,5 +1,6 @@
 #import "Header.h"
 
+static UIStatusBar* statusBar;
 static double standardHeight = 20;
 static double defaultDoubleHeight = 40;
 static UILabel* label;
@@ -40,6 +41,7 @@ static UIColor* color;
 }
 
 - (void) setFrame: (CGRect) frame {
+	statusBar = self;
 	frame.size.height = (CGFloat)[self _standardHeight];
 	%orig(frame);
 	object_getInstanceVariable(self, "_doubleHeightLabel", (void **) &label);
@@ -79,6 +81,9 @@ static UIColor* color;
 
 %hook UIStatusBarForegroundStyleAttributes
 - (id)tintColor {
+	if (statusBar && ![statusBar isDoubleHeight]) {
+		return %orig;
+	}
 	UIApplication* app = [UIApplication sharedApplication];
 	UIApplicationFlags& flags = MSHookIvar<UIApplicationFlags>(app, "_applicationFlags");
 	long long style;

@@ -1,7 +1,7 @@
 Package: io.github.rikumi.NoDoubleStatus
 Name: NoDoubleStatus
 Depends: mobilesubstrate
-Version: 1.0.0
+Version: 1.1.0
 Architecture: iphoneos-arm
 Description: 双高状态栏(热点/通话/定位/录音)变单高 自适应颜色
 Maintainer: Rikumi
