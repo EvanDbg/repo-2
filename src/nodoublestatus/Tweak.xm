@@ -15,29 +15,31 @@ static UIColor* color;
 }
 %end
 
-%hook SBIconScrollView
-- (void) setFrame: (CGRect) frame {
-	CGFloat minY = standardHeight + 2;
-	if (![NSStringFromClass([self class]) isEqualToString: @"SBFloatyFolderScrollView"]
-		&& frame.origin.y < minY) {
-		frame.size.height -= minY - frame.origin.y;
-		frame.origin.y = minY;
-	}
-	%orig(frame);
-}
-%end
+// %hook SBIconScrollView
+// - (void) setFrame: (CGRect) frame {
+// 	CGFloat minY = standardHeight + 2;
+// 	if (![NSStringFromClass([self class]) isEqualToString: @"SBFloatyFolderScrollView"]
+// 		&& frame.origin.y < minY) {
+// 		frame.size.height -= minY - frame.origin.y;
+// 		frame.origin.y = minY;
+// 	}
+// 	%orig(frame);
+// }
+// %end
 
 %hook UIStatusBar
-+ (double)_heightForStyle:(long long)arg1 orientation:(long long)arg2 forStatusBarFrame:(bool)arg3 {
-	return 0;
-}
+// + (double)_heightForStyle:(long long)arg1 orientation:(long long)arg2 forStatusBarFrame:(bool)arg3 {
+// 	if ([[[NSBundle mainBundle] bundleIdentifier] isEqualToString: @"com.apple.springboard"]) {
+// 		return 0;
+// 	}
+// 	return standardHeight;
+// }
 
-+ (double)_viewControllerAdjustmentForOrientation:(long long)arg1 {
-	return standardHeight;
-}
-
-- (double) heightForOrientation: (long long) arg1 {
-	return [self _standardHeight];
+// - (double) heightForOrientation: (long long) arg1 {
+// 	return [self _standardHeight];
+// }
+- (void)_adjustDoubleHeightTextVisibility {
+	//nope
 }
 
 - (void) setFrame: (CGRect) frame {
@@ -79,19 +81,17 @@ static UIColor* color;
 }
 %end
 
-%hook UIStatusBarForegroundStyleAttributes
-- (id)tintColor {
-	if (statusBar && ![statusBar isDoubleHeight]) {
-		return %orig;
-	}
-	UIApplication* app = [UIApplication sharedApplication];
-	UIApplicationFlags& flags = MSHookIvar<UIApplicationFlags>(app, "_applicationFlags");
-	long long style;
-	if (flags.viewControllerBasedStatusBarAppearance) {
-		style = [topmostViewController() preferredStatusBarStyle];
-	} else {
-		style = [app statusBarStyle];
-	}
-	return style == UIStatusBarStyleLightContent ? [UIColor whiteColor] : [UIColor blackColor];
+%hook UIStatusBarServer
+- (void)_receivedDoubleHeightStatus:(const char *)arg1 forStyle:(long long)arg2 {
+	// nope
+}
+%end
+
+%hook UIStatusBarStyleAttributes
+- (bool)isDoubleHeight {
+	return NO;
+}
+- (bool)isPulsingAnimationEnabled {
+	return NO;
 }
 %end
