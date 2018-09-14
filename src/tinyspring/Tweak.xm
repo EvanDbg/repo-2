@@ -11,7 +11,7 @@
 }
 %end
 
-%hook SBIconParallaxBadgeView
+%hook SBIconBadgeView
 - (void) setFrame: (CGRect) frame {
 	CGFloat iconSize = [[self superview] frame].size.width;
 	CGFloat badgeSize = 14;
@@ -22,8 +22,8 @@
 	frame.size.height = badgeSize;
 	%orig(frame);
 	[[self layer] setCornerRadius: badgeSize / 2];
-	[[self layer] setShadowOpacity: 0.2];
-	[[self layer] setShadowRadius: 2];
+	[[self layer] setShadowOpacity: 0.1];
+	[[self layer] setShadowRadius: 1];
 	[[self layer] setShadowOffset: CGSizeMake(0, 2)];
 }
 %end

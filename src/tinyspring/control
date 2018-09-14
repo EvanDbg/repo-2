@@ -1,7 +1,7 @@
 Package: io.github.rikumi.TinySpring
 Name: TinySpring
 Depends: mobilesubstrate
-Version: 1.1.0
+Version: 1.1.1
 Architecture: iphoneos-arm
 Description: 桌面微调集合：通知大圆圈变小圆点；单页时关闭弹性；图标标签下移；下拉搜索不移动图标
 Maintainer: Rikumi
